@@ -7,6 +7,11 @@ public class Alarme extends Objeto{
 		super("Alarme", 1, "Nao adicionado");
 		this.horario = "12:00";
 	}
+	
+	public String toString()
+	{
+		return definirStatus();
+	}
 
 	@Override
 	public String definirStatus()
