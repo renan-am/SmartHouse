@@ -24,10 +24,14 @@ public class ControllerCriarCasa {
 
     @FXML
     void addLista() {
-        if (comodos.getText() == "") {
+        if (comodos.getText() != "") {
             items.add(comodos.getText());
             comodos.setText("");
             lista.setItems(items);
         }
+    }
+
+    void acaoAmazonas(){
+        
     }
 }
