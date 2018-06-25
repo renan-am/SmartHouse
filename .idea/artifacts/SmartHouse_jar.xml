@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SmartHouse:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SmartHouse_jar</output-path>
+    <root id="archive" name="SmartHouse.jar">
+      <element id="module-output" name="SmartHouse" />
+    </root>
+  </artifact>
+</component>

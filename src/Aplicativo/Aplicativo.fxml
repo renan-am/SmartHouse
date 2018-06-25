@@ -16,8 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aplicativo.Controller">
    <center>
       <SplitPane dividerPositions="0.2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="768.0" prefWidth="1024.0">
         <items>
@@ -45,18 +44,18 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="186.0" text="Novo" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#criarCasa" prefHeight="74.0" prefWidth="186.0" text="Novo" GridPane.columnIndex="1" />
                               <Button disable="true" mnemonicParsing="false" prefHeight="238.0" prefWidth="347.0" text="Excluir" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Button disable="true" mnemonicParsing="false" prefHeight="152.0" prefWidth="218.0" text="Editar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
                         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                            <children>
-                              <Label prefHeight="53.0" prefWidth="161.0" text=" Casa: Casa Principal" textAlignment="CENTER" />
+                              <Label fx:id="nomeCasa" prefHeight="53.0" prefWidth="161.0" text=" Casa: Casa Principal" textAlignment="CENTER" />
                               <Separator prefWidth="200.0" />
-                              <Label prefHeight="51.0" prefWidth="163.0" text=" Local: Amazonas" />
+                              <Label fx:id="localCasa" prefHeight="51.0" prefWidth="163.0" text=" Local: Amazonas" />
                               <Separator prefWidth="200.0" />
-                              <Label prefHeight="52.0" prefWidth="163.0" text=" Comodos: 12" />
+                              <Label fx:id="comodosCasa" prefHeight="52.0" prefWidth="163.0" text=" Comodos: 12" />
                            </children>
                         </VBox>
                         <GridPane GridPane.columnIndex="3">
@@ -105,7 +104,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#Salvar" text="Salvar" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
