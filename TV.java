@@ -1,4 +1,3 @@
-package Recursos;
 
 public class TV extends Objeto{
 	private int canal;
@@ -32,6 +31,7 @@ public class TV extends Objeto{
 	
 	public TV() //padrao de fabrica
 	{
+		super("Radio", 1, "Nao foi adicionado a nenhum comodo");
 		this.canal = 0;
 		this.brilho = 50;
 		this.contraste = 50;
@@ -40,14 +40,12 @@ public class TV extends Objeto{
 	
 	public String toString()
 	{
-		String out = "A tv estï¿½ no canal  " + this.canal + "\n";
-		out += "Brilho: " + this.brilho + " Contraste: " + this.contraste + " Volume: " + this.volume + "\n";
-		return out;
+		definirStatus();
 	}
 	
 	public String definirStatus()
 	{
-		String out = "A tv estï¿½ no canal  " + this.canal + "\n";
+		String out = "A tv está no canal  " + this.canal + "\n";
 		out += "Brilho: " + this.brilho + " Contraste: " + this.contraste + " Volume: " + this.volume + "\n";
 		return out;
 	}
