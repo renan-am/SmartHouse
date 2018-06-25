@@ -42,7 +42,7 @@ public class Geladeira extends Objeto implements Serializable {
 	}
 	
 	public String definirStatus() {
-		if(super.getEstado()) {
+		if(super.isEstado()) {
 			String out = "Geladeira em funcionamento.\n";
 			out = out + "Quantidade de latas armazenadas: " +getQtdLatas() +"\n";
 			out = out + "Quantidade de gelo disponivel no momoento: " +getQtdGelo()+ "\n";
