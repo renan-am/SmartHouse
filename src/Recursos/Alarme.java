@@ -1,6 +1,11 @@
 package Recursos;
 
-public class Alarme extends Objeto{
+import java.io.Serializable;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalTime;
+
+public class Alarme extends Objeto implements Serializable{
 	String horario;
 	
 	public Alarme() { //alarme padrao

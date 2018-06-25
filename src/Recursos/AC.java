@@ -1,6 +1,11 @@
 package Recursos;
 
-public class AC extends Objeto {
+import java.io.Serializable;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalTime;
+
+public class AC extends Objeto implements Serializable{
 	private int temperatura;
 	private boolean ventilar;
 	
