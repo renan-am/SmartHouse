@@ -41,7 +41,7 @@ public class TV extends Objeto{
 	
 	public String toString()
 	{
-		definirStatus();
+		return definirStatus();
 	}
 	
 	public String definirStatus()
