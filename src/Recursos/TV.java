@@ -1,3 +1,4 @@
+package Recursos;
 
 public class TV extends Objeto{
 	private int canal;
@@ -39,14 +40,14 @@ public class TV extends Objeto{
 	
 	public String toString()
 	{
-		String out = "A tv está no canal  " + this.canal + "\n";
+		String out = "A tv estï¿½ no canal  " + this.canal + "\n";
 		out += "Brilho: " + this.brilho + " Contraste: " + this.contraste + " Volume: " + this.volume + "\n";
 		return out;
 	}
 	
 	public String definirStatus()
 	{
-		String out = "A tv está no canal  " + this.canal + "\n";
+		String out = "A tv estï¿½ no canal  " + this.canal + "\n";
 		out += "Brilho: " + this.brilho + " Contraste: " + this.contraste + " Volume: " + this.volume + "\n";
 		return out;
 	}

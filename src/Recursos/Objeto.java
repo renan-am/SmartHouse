@@ -1,3 +1,5 @@
+package Recursos;
+
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.Instant;

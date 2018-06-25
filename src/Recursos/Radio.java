@@ -1,5 +1,6 @@
+package Recursos;
 
-public class Radio extends Objeto 
+public class Radio extends Objeto
 {
 	public enum radioStation{		
 		radio("Radio AM/FM"), cd("CD"), usb("USB");
@@ -42,7 +43,7 @@ public class Radio extends Objeto
 	
 	public String definirStatus()
 	{
-		String out = "O aparelho de som está ";
+		String out = "O aparelho de som estï¿½ ";
 		if(this.ligado)
 			out += "ligado\n";
 		else
