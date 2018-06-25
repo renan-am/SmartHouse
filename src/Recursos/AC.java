@@ -1,3 +1,4 @@
+package Recursos;
 
 public class AC extends Objeto {
 	private int temperatura;
@@ -18,6 +19,7 @@ public class AC extends Objeto {
 	
 	public AC() //ar condicionado de fabrica
 	{
+		super("Ar Condicionado", 1, "Nao foi adicionado a nenhum comodo");
 		this.temperatura = 25;
 		this.ventilar = false;
 	}
@@ -30,7 +32,7 @@ public class AC extends Objeto {
 	public String definirStatus()
 	{
 		String out = "O ar condicionado está ";
-		if(this.estado)
+		if(isEstado())
 			out += "ligado\n";
 		else
 			out += "desligado\n";
