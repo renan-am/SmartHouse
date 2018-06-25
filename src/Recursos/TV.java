@@ -40,9 +40,13 @@ public class TV extends Objeto{
 	
 	public String toString()
 	{
+<<<<<<< HEAD
 		String out = "A tv est� no canal  " + this.canal + "\n";
 		out += "Brilho: " + this.brilho + " Contraste: " + this.contraste + " Volume: " + this.volume + "\n";
 		return out;
+=======
+		definirStatus();
+>>>>>>> 882633015929f9b775b884aaedfcb059a411376f
 	}
 	
 	public String definirStatus()

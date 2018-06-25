@@ -12,17 +12,9 @@ public class Radio extends Objeto
 		}
 	}
 	
-	private boolean ligado;
-	private int frequencia;
 	private int estacao;
 	private int volume;
 	
-	public int getFrequencia() {
-		return frequencia;
-	}
-	public void setFrequencia(int frequencia) {
-		this.frequencia = frequencia;
-	}
 	public int getEstacao() {
 		return estacao;
 	}
@@ -43,12 +35,24 @@ public class Radio extends Objeto
 	
 	public String definirStatus()
 	{
+<<<<<<< HEAD
 		String out = "O aparelho de som estï¿½ ";
 		if(this.ligado)
+=======
+		String out = "O aparelho de som está ";
+		if(this.estado)
+>>>>>>> 882633015929f9b775b884aaedfcb059a411376f
 			out += "ligado\n";
 		else
 			out += "desligado\n";
-		out += "Estacao: " + this.estacao + " Frequencia: " + this.frequencia + " Volume: " + this.volume + "\n";
+		out += "Estacao: " + this.estacao + " Volume: " + this.volume + "\n";
 		return out;
+	}
+	
+	public Radio()
+	{
+		super("Radio", 1, "Nao foi adicionado a nenhum comodo");
+		this.volume = 50;
+		this.estacao = 0;
 	}
 }
