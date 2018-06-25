@@ -31,12 +31,12 @@ public class AC extends Objeto implements Serializable{
 	
 	public String toString()
 	{
-		definirStatus();
+		return definirStatus();
 	}
 	
 	public String definirStatus()
 	{
-		String out = "O ar condicionado est· ";
+		String out = "O ar condicionado est√° ";
 		if(isEstado())
 			out += "ligado\n";
 		else
