@@ -32,6 +32,7 @@ public class TV extends Objeto{
 	
 	public TV() //padrao de fabrica
 	{
+		super("TV", 1, "Nao foi adicionado a nenhum comodo");
 		this.canal = 0;
 		this.brilho = 50;
 		this.contraste = 50;
@@ -40,15 +41,19 @@ public class TV extends Objeto{
 	
 	public String toString()
 	{
-		String out = "A tv est� no canal  " + this.canal + "\n";
-		out += "Brilho: " + this.brilho + " Contraste: " + this.contraste + " Volume: " + this.volume + "\n";
-		return out;
+		return definirStatus();
 	}
 	
 	public String definirStatus()
 	{
-		String out = "A tv est� no canal  " + this.canal + "\n";
-		out += "Brilho: " + this.brilho + " Contraste: " + this.contraste + " Volume: " + this.volume + "\n";
+		String out = "A TV esta ";
+		if(isEstado()) {
+			out += "ligada\n";
+			out += "Canal " + this.canal + "\n";
+			out += "Brilho: " + this.brilho + " Contraste: " + this.contraste + " Volume: " + this.volume + "\n";
+		}
+		else
+			out += "desligada\n";
 		return out;
 	}
 }
