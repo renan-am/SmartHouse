@@ -35,13 +35,8 @@ public class Radio extends Objeto
 	
 	public String definirStatus()
 	{
-<<<<<<< HEAD
-		String out = "O aparelho de som estï¿½ ";
-		if(this.ligado)
-=======
-		String out = "O aparelho de som está ";
+		String out = "O aparelho de som estÃ¡ ";
 		if(this.estado)
->>>>>>> 882633015929f9b775b884aaedfcb059a411376f
 			out += "ligado\n";
 		else
 			out += "desligado\n";
