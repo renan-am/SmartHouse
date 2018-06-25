@@ -41,9 +41,9 @@ public class Cafeteira extends Objeto implements Serializable{
 		this.qtdLeite = qtdLeite;
 	}
 	
-	public String DefinirStatus() {
+	public String definirStatus() {
 		if(super.getEstado() == true) {
-			String out = "Café em preparo, com quantidade de cafe desejada:" +getQuantidade();
+			String out = "CafÃ© em preparo, com quantidade de cafe desejada:" +getQuantidade();
 			out = out + "Quantidade de leite desejada: " +getQtdLeite();
 			if(isAcucar()) {
 				out = out + "Sim";				
