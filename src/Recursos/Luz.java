@@ -32,7 +32,7 @@ public class Luz extends Objeto implements Serializable{
 	}
 	
 	public String definirStatus() {
-		if(super.getEstado() == true) {
+		if(super.isEstado()) {
 			String out = "A luz esta acesa, com intensidade" +getIntensidade()+ "e cor atual" +getCor();
 			return out;			
 		}
