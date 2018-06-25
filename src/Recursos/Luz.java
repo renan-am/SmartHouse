@@ -40,6 +40,5 @@ public class Luz extends Objeto implements Serializable{
 			String out = "Luz apagada";
 			return out;
 		}
-	}
-	
+	}	
 }
