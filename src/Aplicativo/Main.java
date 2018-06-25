@@ -10,15 +10,22 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Aplicativo.fxml"));
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setControllerFactory(c -> {
+            return new Controller(1,2);
+        });
+        Parent root = loader.load(getClass().getResource("Aplicativo.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
-        //launch(args);
-        System.out.println("Teste");
+        launch(args);
+
+
+
     }
 }
