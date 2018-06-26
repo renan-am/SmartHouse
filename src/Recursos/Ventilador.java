@@ -32,7 +32,7 @@ public class Ventilador extends Objeto implements Serializable{
 	}
 	
 	public String definirStatus() {
-		if(super.isEstado()) {
+		if(super.getEstado() == true) {
 			String out = "Ventilar ligado. Estado de rotacao: ";
 			if(isRotacao())
 				out = out + "Rotacionando.";
