@@ -44,6 +44,10 @@ public class Casa implements Serializable{
 		return estado;
 	}
 
+	public double getPreco(){
+	    return estado.kWh;
+    }
+
 	public void setEstado(Estados estado) {
 		this.estado = estado;
 	}

@@ -44,6 +44,7 @@ public class ControllerCriarCasa {
         items = FXCollections.observableArrayList ();
     }
 
+
     @FXML
     void addLista() {
         if (comodos.getText() != "") {
