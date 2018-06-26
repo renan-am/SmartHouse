@@ -78,7 +78,7 @@ public abstract class Objeto implements Serializable{
 	}
 	
 	public double calcularConsumo() {
-		return this.potencia*this.tempoDeUso*3.6; // watt/hora
+		return ((double)this.potencia/1000)*((double)this.tempoDeUso/3600); // KwH
 	}
 	
 	public abstract String definirStatus();

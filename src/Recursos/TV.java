@@ -1,6 +1,9 @@
 package Recursos;
 
-public class TV extends Objeto{
+import java.io.Serializable;
+
+public class TV extends Objeto implements Serializable{
+	MinhaExcecao e = new MinhaExcecao("O valor eh incorreto!");
 	private int canal;
 	private int brilho;
 	private int contraste;
@@ -26,14 +29,17 @@ public class TV extends Objeto{
 	public int getVolume() {
 		return volume;
 	}
-	public void setVolume(int volume) {
+	public void setVolume(int volume) throws MinhaExcecao{
+		if (volume != (int)volume) {
+			throw e;
+		}
 		this.volume = volume;
 	}
 	
-	public TV() //padrao de fabrica
+	public TV(String nome, int potencia, String comodo) //padrao de fabrica
 	{
-		super("TV", 1, "Nao foi adicionado a nenhum comodo");
-		this.canal = 0;
+		super(nome, potencia, comodo);
+		this.canal = 302;
 		this.brilho = 50;
 		this.contraste = 50;
 		this.volume = 50;

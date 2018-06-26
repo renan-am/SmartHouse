@@ -5,14 +5,18 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalTime;
 
-public class AC extends Objeto implements Serializable{
+public class AC extends Objeto implements Serializable {
 	private int temperatura;
 	private boolean ventilar;
+	MinhaExcecao e = new MinhaExcecao("O valor eh incorreto!");
 	
 	public int getTemperatura() {
 		return temperatura;
 	}
-	public void setTemperatura(int temperatura) {
+	public void setTemperatura(int temperatura) throws MinhaExcecao{
+		if (temperatura != (int)temperatura) {
+			throw e;
+		}
 		this.temperatura = temperatura;
 	}
 	public boolean isVentilar() {
@@ -22,9 +26,9 @@ public class AC extends Objeto implements Serializable{
 		this.ventilar = ventilar;
 	}
 	
-	public AC() //ar condicionado de fabrica
+	public AC(String nome, int potencia, String comodo) //ar condicionado de fabrica
 	{
-		super("Ar Condicionado", 1, "Nao foi adicionado a nenhum comodo");
+		super(nome, potencia, comodo);
 		this.temperatura = 25;
 		this.ventilar = false;
 	}
