@@ -1,6 +1,8 @@
 package Recursos;
 
-public class TV extends Objeto{
+import java.io.Serializable;
+
+public class TV extends Objeto implements Serializable{
 	private int canal;
 	private int brilho;
 	private int contraste;
@@ -30,13 +32,13 @@ public class TV extends Objeto{
 		this.volume = volume;
 	}
 	
-	public TV() //padrao de fabrica
+	public TV(int canal, int brilho, int contraste, int volume, String nome, int potencia, String comodo) //padrao de fabrica
 	{
-		super("TV", 1, "Nao foi adicionado a nenhum comodo");
-		this.canal = 0;
-		this.brilho = 50;
-		this.contraste = 50;
-		this.volume = 50;
+		super(nome, potencia, comodo);
+		this.canal = canal;
+		this.brilho = brilho;
+		this.contraste = contraste;
+		this.volume = volume;
 	}
 	
 	public String toString()
