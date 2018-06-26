@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -16,6 +17,9 @@ public class CriarObjeto {
     String comodo;
     ObservableList<String> items;
     String tipoObj;
+
+    @FXML
+    MenuButton menu;
 
     @FXML
     TextField nome;
@@ -49,22 +53,27 @@ public class CriarObjeto {
     @FXML
     void acaoTV(){
         tipoObj = "TV";
+        menu.setText("TV");
     }
 
     @FXML
     void acaoAC(){
         tipoObj = "AC";
+        menu.setText("Ar Condicionado");
+
     }
 
     @FXML
     void acaoLuz(){
         tipoObj = "Luz";
+        menu.setText("Luz");
+
     }
 
 
     @FXML
     void criarObjeto() {
-        /*
+
         Objeto aux;
         if (tipoObj == "TV"){
             aux = new TV (nome.getText(), Integer.parseInt(potencia.getText()), comodo);
@@ -72,8 +81,12 @@ public class CriarObjeto {
             aux = new AC(nome.getText(), Integer.parseInt(potencia.getText()), comodo);
         } else if (tipoObj == "Luz") {
             aux = new Luz(nome.getText(), Integer.parseInt(potencia.getText()), comodo);
+        } else  {
+            aux = new Luz(nome.getText(), Integer.parseInt(potencia.getText()), comodo);
         }
-*/
+        casa.getObjetos().add(aux);
+        Apoio.controller.atualizar();
+
         Stage stage = (Stage) btCriar.getScene().getWindow();
         stage.close();
     }

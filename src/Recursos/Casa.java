@@ -72,6 +72,15 @@ public class Casa implements Serializable{
         return objetos;
     }
 
+    public ArrayList<String> getObjetosString() {
+	    ArrayList<String> aux = new ArrayList<String>();
+
+	    for (Objeto i : objetos)
+	        aux.add(i.getNome());
+
+	    return aux;
+    }
+
     public double consumoTotal() {
 		double parcial = 0;
 		for (Objeto aux : objetos) {
@@ -91,21 +100,7 @@ public class Casa implements Serializable{
         return maiorObjeto;
     }
 
-	public ArrayList<String> getComodos() {
-		return comodos;
-	}
 
-	public void setComodos(ArrayList<String> comodos) {
-		this.comodos = comodos;
-	}
-
-	public ArrayList<Objeto> getObjetos() {
-		return objetos;
-	}
-
-	public void setObjetos(ArrayList<Objeto> objetos) {
-		this.objetos = objetos;
-	}
 	
 	public void adicionarObjeto(Objeto obj)
     {

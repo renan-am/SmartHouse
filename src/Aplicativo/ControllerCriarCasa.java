@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -18,6 +19,9 @@ public class ControllerCriarCasa {
     Casa casa;
     ObservableList<String> items;
     Estados local;
+
+    @FXML
+    MenuButton menu;
 
     @FXML
     TextField nome;
@@ -51,18 +55,22 @@ public class ControllerCriarCasa {
     @FXML
     void acaoAmazonas(){
         local = Estados.AM;
+        menu.setText("Amazonas");
     }
     @FXML
     void acaoBahia(){
         local = Estados.BA;
+        menu.setText("Bahia");
     }
     @FXML
     void acaoSP(){
         local = Estados.SP;
+        menu.setText("Sao Paulo");
     }
     @FXML
     void acaoRS(){
         local = Estados.RS;
+        menu.setText("Rio Grande do Sul");
     }
 
     @FXML

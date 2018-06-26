@@ -40,7 +40,7 @@
             <VBox prefHeight="65.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <Label text="Local" />
-                  <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Selecione o local">
+                  <MenuButton fx:id="menu" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Selecione o local">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#acaoAmazonas" text="Amazonas" />
                       <MenuItem mnemonicParsing="false" onAction="#acaoBahia" text="Bahia" />

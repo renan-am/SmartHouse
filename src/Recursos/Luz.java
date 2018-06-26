@@ -14,6 +14,12 @@ public class Luz extends Objeto implements Serializable{
 		this.intensidade = intensidade;
 		this.cor = cor;
 	}
+
+	public Luz (String nome, int potencia, String comodo) {
+		super(nome, potencia, comodo);
+		this.intensidade = QualidadeLuz.BAIXA;
+		this.cor = QualidadeLuz.VERDE;
+	}
 	
 	public QualidadeLuz getIntensidade() {
 		return intensidade;
