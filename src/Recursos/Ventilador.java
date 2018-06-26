@@ -9,10 +9,10 @@ public class Ventilador extends Objeto implements Serializable{
 	EstadoVentilador intensidade;
 	private boolean rotacao;
 	
-	public Ventilador(EstadoVentilador intensidade, boolean rotacao, String nome, int potencia, String comodo) {
+	public Ventilador(String nome, int potencia, String comodo) {
 		super(nome, potencia, comodo);
-		this.intensidade = intensidade;
-		this.rotacao = rotacao;
+		this.intensidade = EstadoVentilador.BAIXA;
+		this.rotacao = false;
 	}
 	
 	public EstadoVentilador getIntensidade() {
@@ -32,7 +32,7 @@ public class Ventilador extends Objeto implements Serializable{
 	}
 	
 	public String definirStatus() {
-		if(super.getEstado() == true) {
+		if(super.isEstado()) {
 			String out = "Ventilar ligado. Estado de rotacao: ";
 			if(isRotacao())
 				out = out + "Rotacionando.";
