@@ -46,14 +46,14 @@ public class Casa implements Serializable{
 		this.numComodos = numComodos;
 	}
 	
-	public Objeto maisUtilizado() { //verifica qual eh o objeto mais utilizado
-		Objeto maiorObjeto = objetos.get(0);
-		for (int i = 0; i < objetos.size - 1; i++) {
-			if(objetos.get(i).getTempoDeUso() > objetos.get(i+1).getTempoDeUso())
-				maiorObjeto = objetos.get(i);
-		}
-		return maiorObjeto;
-	}
+	//public Objeto maisUtilizado() { //verifica qual eh o objeto mais utilizado
+	//	Objeto maiorObjeto = objetos.get(0);
+	//	for (int i = 0; i < objetos.size - 1; i++) {
+	//		if(objetos.get(i).getTempoDeUso() > objetos.get(i+1).getTempoDeUso())
+	//			maiorObjeto = objetos.get(i);
+	//	}
+	//	return maiorObjeto;
+	//}
 	
 	public double consumoTotal() {
 		double parcial = 0;
