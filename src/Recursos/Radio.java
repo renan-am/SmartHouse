@@ -1,7 +1,6 @@
 package Recursos;
 
-public class Radio extends Objeto 
-{
+public class Radio extends Objeto implements Serializable{
 	public enum radioStation{		
 		radio("Radio AM/FM"), cd("CD"), usb("USB");
 		
@@ -15,26 +14,33 @@ public class Radio extends Objeto
 	private int estacao;
 	private int volume;
 	
+	public Radio(int estacao, int volume, String nome, int potencia, String comodo) {
+		super(nome, potencia, comodo);
+		this.volume = volume;
+		this.estacao = estacao;
+	}
+	
 	public int getEstacao() {
 		return estacao;
 	}
+	
 	public void setEstacao(int estacao) {
 		this.estacao = estacao;
 	}
+	
 	public int getVolume() {
 		return volume;
 	}
+	
 	public void setVolume(int volume) {
 		this.volume = volume;
 	}
 	
-	public String toString()
-	{
+	public String toString(){
 		return definirStatus();
 	}
 	
-	public String definirStatus()
-	{
+	public String definirStatus(){
 		String out = "O aparelho de som está ";
 		if(isEstado())
 			out += "ligado\n";
@@ -42,12 +48,5 @@ public class Radio extends Objeto
 			out += "desligado\n";
 		out += "Estacao: " + this.estacao + " Volume: " + this.volume + "\n";
 		return out;
-	}
-	
-	public Radio()
-	{
-		super("Radio", 1, "Nao foi adicionado a nenhum comodo");
-		this.volume = 50;
-		this.estacao = 0;
 	}
 }
