@@ -1,5 +1,6 @@
 package Aplicativo;
 
+import Recursos.Casa;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +13,7 @@ import java.io.*;
 
 public class Controller  {
 
-    Treino treino;
+    Casa casa;
 
     @FXML
     Label nomeCasa;
@@ -22,16 +23,18 @@ public class Controller  {
     Label comodosCasa;
 
     public Controller() {
-        // treino = new Treino();
+        Apoio.controller = this;
+
         try
         {
             FileInputStream fis = new FileInputStream("treino.sav");
             ObjectInputStream ois = new ObjectInputStream(fis);
-            treino = (Treino) ois.readObject();
+            casa = (Casa) ois.readObject();
             ois.close();
             fis.close();
         }catch(IOException ioe){
-            treino = Treino.getInstance();
+            casa = Casa.getInstance();
+
             ioe.printStackTrace();
             return;
         }catch(ClassNotFoundException c){
@@ -44,9 +47,9 @@ public class Controller  {
 
     @FXML
     public void initialize(){
-        nomeCasa.setText("Casa: " + treino.nome);
-        localCasa.setText("Local: " + treino.local);
-        comodosCasa.setText("Comodos: " + treino.comodos);
+        nomeCasa.setText("Casa: ");
+        localCasa.setText("Local: ");
+        comodosCasa.setText("Comodos: ");
     }
 
     @FXML
@@ -64,7 +67,7 @@ public class Controller  {
         try{
             FileOutputStream fos= new FileOutputStream(file);
             ObjectOutputStream oos= new ObjectOutputStream(fos);
-            oos.writeObject(treino);
+            oos.writeObject(casa);
             oos.close();
             fos.close();
         }catch(IOException ioe){
@@ -74,7 +77,7 @@ public class Controller  {
 
     @FXML
     void criarCasa() {
-        Parent root;
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("CriarCasa.fxml"));
@@ -86,6 +89,12 @@ public class Controller  {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void atualizar(){
+        nomeCasa.setText("Casa: " + casa.getNome());
+        localCasa.setText("Local: " + casa.getEstado());
+        comodosCasa.setText("Comodos: " + casa.getComodos().size());
     }
 
 }

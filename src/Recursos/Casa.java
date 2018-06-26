@@ -4,14 +4,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Casa implements Serializable{
-	
+	private static Casa casa = new Casa("",null, 0, "");
+
 	private String nome;
 	private Estados estado;
 	private int numComodos;
 	ArrayList<String> comodos;
 	ArrayList<Objeto> objetos;
-	private final String senha;
-	
+	private String senha;
+
+
 	public Casa (String nome, Estados estado, int numComodos, String senha) {
 		this.nome = nome;
 		this.estado = estado;
@@ -21,6 +23,14 @@ public class Casa implements Serializable{
 		comodos = new ArrayList<String>();
 		objetos = new ArrayList<Objeto>();
 	}
+
+	public static Casa getInstance(){
+	    return casa;
+    }
+
+    public static void setInstance(Casa nova){
+         casa = nova;
+    }
 
 	public String getNome() {
 		return nome;
@@ -45,8 +55,24 @@ public class Casa implements Serializable{
 	public void setNumComodos(int numComodos) {
 		this.numComodos = numComodos;
 	}
-	
-	public double consumoTotal() {
+
+    public void setComodos(ArrayList<String> comodos) {
+        this.comodos = comodos;
+    }
+
+    public void setObjetos(ArrayList<Objeto> objetos) {
+        this.objetos = objetos;
+    }
+
+    public ArrayList<String> getComodos() {
+        return comodos;
+    }
+
+    public ArrayList<Objeto> getObjetos() {
+        return objetos;
+    }
+
+    public double consumoTotal() {
 		double parcial = 0;
 		for (Objeto aux : objetos) {
 			parcial = parcial + aux.calcularConsumo();

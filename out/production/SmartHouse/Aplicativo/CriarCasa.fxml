@@ -7,6 +7,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
@@ -33,7 +34,7 @@
             <VBox prefHeight="50.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Label text="Nome" />
-                  <TextField />
+                  <TextField fx:id="nome" />
                </children>
             </VBox>
             <VBox prefHeight="65.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -41,10 +42,10 @@
                   <Label text="Local" />
                   <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Selecione o local">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Amazonas" />
-                      <MenuItem mnemonicParsing="false" text="Bahia" />
-                        <MenuItem mnemonicParsing="false" text="São Paulo" />
-                        <MenuItem mnemonicParsing="false" text="Rio Grande do Sul" />
+                      <MenuItem mnemonicParsing="false" onAction="#acaoAmazonas" text="Amazonas" />
+                      <MenuItem mnemonicParsing="false" onAction="#acaoBahia" text="Bahia" />
+                        <MenuItem mnemonicParsing="false" onAction="#acaoSP" text="São Paulo" />
+                        <MenuItem mnemonicParsing="false" onAction="#acaoRS" text="Rio Grande do Sul" />
                     </items>
                   </MenuButton>
                </children>
@@ -52,21 +53,25 @@
             <VBox prefHeight="280.0" prefWidth="228.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="17.0" prefWidth="38.0" text="Senha" />
-                  <TextField prefHeight="25.0" prefWidth="201.0" />
+                  <TextField fx:id="senha" prefHeight="25.0" prefWidth="201.0" />
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
                   <FlowPane prefHeight="28.0" prefWidth="306.0">
                      <children>
-                        <Label prefHeight="27.0" prefWidth="60.0" text="Comodo    " />
                         <TextField fx:id="comodos" prefHeight="25.0" prefWidth="178.0" />
-                        <Button mnemonicParsing="false" onAction="#addLista" prefHeight="25.0" prefWidth="64.0" text="Criar" />
+                        <Button mnemonicParsing="false" onAction="#addLista" prefHeight="25.0" prefWidth="124.0" text="Criar Comodo" />
                      </children>
                   </FlowPane>
                   <ListView fx:id="lista" editable="true" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </VBox>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <center>
+                  <Button fx:id="btCriar" mnemonicParsing="false" onAction="#criarCasa" text="Criar Casa" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
          </children>
       </GridPane>
    </children>
