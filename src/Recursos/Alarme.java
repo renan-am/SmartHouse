@@ -8,9 +8,9 @@ import java.time.LocalTime;
 public class Alarme extends Objeto implements Serializable{
 	String horario;
 	
-	public Alarme(String horario, String nome, int potencia, String comodo) { //alarme padrao
+	public Alarme(String nome, int potencia, String comodo) { //alarme padrao
 		super(nome, potencia, comodo);
-		this.horario = horario;
+		this.horario = "08:00";
 	}
 	
 	public String toString()

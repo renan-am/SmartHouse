@@ -13,7 +13,10 @@ public class AC extends Objeto implements Serializable {
 	public int getTemperatura() {
 		return temperatura;
 	}
-	public void setTemperatura(int temperatura){
+	public void setTemperatura(int temperatura) throws MinhaExcecao{
+		if (temperatura != (int)temperatura) {
+			throw e;
+		}
 		this.temperatura = temperatura;
 	}
 	public boolean isVentilar() {

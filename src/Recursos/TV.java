@@ -3,6 +3,7 @@ package Recursos;
 import java.io.Serializable;
 
 public class TV extends Objeto implements Serializable{
+	MinhaExcecao e = new MinhaExcecao("O valor eh incorreto!");
 	private int canal;
 	private int brilho;
 	private int contraste;
@@ -28,7 +29,10 @@ public class TV extends Objeto implements Serializable{
 	public int getVolume() {
 		return volume;
 	}
-	public void setVolume(int volume) {
+	public void setVolume(int volume) throws MinhaExcecao{
+		if (volume != (int)volume) {
+			throw e;
+		}
 		this.volume = volume;
 	}
 	

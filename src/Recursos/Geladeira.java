@@ -10,11 +10,11 @@ public class Geladeira extends Objeto implements Serializable {
 	private int qtdGelo;
 	private boolean aberta;
 	
-	public Geladeira(String nome, int potencia, String comodo) {
+	public Geladeira(int qtdLatas, int qtdGelo, boolean aberta, String nome, int potencia, String comodo) {
 		super(nome, potencia, comodo);
-		this.qtdLatas = 0;
-		this.qtdGelo = 0;
-		this.aberta = false;
+		this.qtdLatas = qtdLatas;
+		this.qtdGelo = qtdGelo;
+		this.aberta = aberta;
 	}
 	
 	public int getQtdLatas() {		

@@ -9,10 +9,10 @@ public class Ventilador extends Objeto implements Serializable{
 	EstadoVentilador intensidade;
 	private boolean rotacao;
 	
-	public Ventilador(String nome, int potencia, String comodo) {
+	public Ventilador(EstadoVentilador intensidade, boolean rotacao, String nome, int potencia, String comodo) {
 		super(nome, potencia, comodo);
-		this.intensidade = EstadoVentilador.BAIXA;
-		this.rotacao = false;
+		this.intensidade = intensidade;
+		this.rotacao = rotacao;
 	}
 	
 	public EstadoVentilador getIntensidade() {
