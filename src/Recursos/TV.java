@@ -32,13 +32,13 @@ public class TV extends Objeto implements Serializable{
 		this.volume = volume;
 	}
 	
-	public TV(int canal, int brilho, int contraste, int volume, String nome, int potencia, String comodo) //padrao de fabrica
+	public TV(String nome, int potencia, String comodo) //padrao de fabrica
 	{
 		super(nome, potencia, comodo);
-		this.canal = canal;
-		this.brilho = brilho;
-		this.contraste = contraste;
-		this.volume = volume;
+		this.canal = 302;
+		this.brilho = 50;
+		this.contraste = 50;
+		this.volume = 50;
 	}
 	
 	public String toString()

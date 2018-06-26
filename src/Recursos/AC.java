@@ -23,11 +23,11 @@ public class AC extends Objeto implements Serializable {
 		this.ventilar = ventilar;
 	}
 	
-	public AC(int temperatura, boolean ventilar, String nome, int potencia, String comodo) //ar condicionado de fabrica
+	public AC(String nome, int potencia, String comodo) //ar condicionado de fabrica
 	{
 		super(nome, potencia, comodo);
-		this.temperatura = temperatura;
-		this.ventilar = ventilar;
+		this.temperatura = 25;
+		this.ventilar = false;
 	}
 	
 	public String toString()
